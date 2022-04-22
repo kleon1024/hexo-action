@@ -14,14 +14,16 @@ git config --global user.email "$INPUT_USER_EMAIL"
 
 # install hexo env
 git submodule update
+ls 
 cd themes/typography
-ls -al
+ls 
 npm install
-ls -al
+ls node_modules
 cd ../..
 npm install
 npm install hexo-cli -g
 npm install hexo-deployer-git --save
+ls node_modules
 
 # deployment
 if [ "$INPUT_COMMIT_MSG" = "none" ]
