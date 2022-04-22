@@ -13,15 +13,10 @@ git config --global user.name "$INPUT_USER_NAME"
 git config --global user.email "$INPUT_USER_EMAIL"
 
 # install hexo env
-pwd
-cd themes/typography
-pwd
+cd themes/typography && npm i && cd ../..
 npm i
-cd ../..
-pwd
-npm i
-# npm install hexo-cli -g
-# npm install hexo-deployer-git --save
+npm install hexo-cli -g
+npm install hexo-deployer-git --save
 
 # deployment
 if [ "$INPUT_COMMIT_MSG" = "none" ]
