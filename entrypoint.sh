@@ -13,7 +13,7 @@ git config --global user.name "$INPUT_USER_NAME"
 git config --global user.email "$INPUT_USER_EMAIL"
 
 # install hexo env
-git submodule init
+git submodule update
 cd themes/typography
 ls -al
 npm install
