@@ -14,7 +14,9 @@ git config --global user.email "$INPUT_USER_EMAIL"
 
 # install hexo env
 pwd
-cd themes/typography && npm i
+cd themes/typography
+pwd
+npm i
 cd ../..
 pwd
 npm i
