@@ -35,13 +35,13 @@ else
     hexo g -d -m "$INPUT_COMMIT_MSG"
 fi
 
-ls -al
-
-src=source/books/
-dst=public/books/
-for book in $src ; do
-  echo "Build $src/$book"
-#   npx honkit build $src/$book $dst/$book
+cd source/_books/
+dst=../../public/books/
+for book in * ; do
+  if [ -d $book ]; then
+    echo "Build $book"
+    npx honkit build $book $dst/$book
+  fi
 done
 
 echo ::set-output name=notify::"Deploy complate."
