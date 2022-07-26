@@ -35,6 +35,8 @@ else
     hexo g -d -m "$INPUT_COMMIT_MSG"
 fi
 
+ls -al
+
 src=source/books/
 dst=public/books/
 for book in $src ; do
