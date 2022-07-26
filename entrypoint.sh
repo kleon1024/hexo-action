@@ -39,7 +39,7 @@ src=source/books/
 dst=public/books/
 for book in $src ; do
   echo "Build $src/$book"
-  npx honkit build $src/$book $dst/$book
+#   npx honkit build $src/$book $dst/$book
 done
 
 echo ::set-output name=notify::"Deploy complate."
