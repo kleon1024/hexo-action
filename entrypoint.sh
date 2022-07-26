@@ -21,6 +21,16 @@ npm i
 npm install hexo-cli -g
 npm install hexo-deployer-git --save
 
+cd source/_books/
+dst=../../public/books/
+for book in * ; do
+  if [ -d $book ]; then
+    echo "Build $book"
+    npx honkit build $book $dst/$book
+  fi
+done
+cd ../..
+
 # deployment
 if [ "$INPUT_COMMIT_MSG" = "none" ]
 then
@@ -34,14 +44,5 @@ else
     NODE_PATH=$NODE_PATH:$(pwd)/node_modules node /sync_deploy_history.js
     hexo g -d -m "$INPUT_COMMIT_MSG"
 fi
-
-cd source/_books/
-dst=../../public/books/
-for book in * ; do
-  if [ -d $book ]; then
-    echo "Build $book"
-    npx honkit build $book $dst/$book
-  fi
-done
 
 echo ::set-output name=notify::"Deploy complate."
