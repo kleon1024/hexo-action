@@ -21,6 +21,9 @@ npm i
 npm install hexo-cli -g
 npm install hexo-deployer-git --save
 
+
+touch public/.nojekyll
+
 cd source/_books/
 dst=../../public/books/
 for book in * ; do
